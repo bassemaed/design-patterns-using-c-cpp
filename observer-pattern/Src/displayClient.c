@@ -33,7 +33,7 @@ void DisplayClient_alarm(DisplayClient *const me, char *alarmMsg)
 void DisplayClient_register(DisplayClient *const me)
 {
   if (me->itsGasSensor)
-    GasSensor_subscribe(me->itsGasSensor, me, &DisplayClient_accept);
+    GasSensor_subscribe(me->itsGasSensor, me, (void*) &DisplayClient_accept);
 }
 
 void DisplayClient_show(DisplayClient *const me)

@@ -26,7 +26,7 @@ void GasSensor_dumpList(GasSensor *const me)
     if (me->itsGasNH[pos])
       if (me->itsGasNH[pos]->acceptorPtr)
       {
-        printf("Client % d : InstancePtr = % p, acceptPtr = % p \n",pos, me->itsGasNH[pos]->instancePtr, me->itsGasNH[pos]->acceptorPtr);
+        printf("Client %d : InstancePtr = %p, acceptPtr = %p \n",pos, me->itsGasNH[pos]->instancePtr, me->itsGasNH[pos]->acceptorPtr);
       };
 }
 void GasSensor_newData(GasSensor *const me, unsigned int flow, unsigned int n2, unsigned int o2)
@@ -52,7 +52,7 @@ void GasSensor_subscribe(GasSensor *const me, void *instancePtr, const gasDataAc
   struct GasNotificationHandle *gnh;
   gnh = GasNotificationHandle_Create();
   gnh->instancePtr = instancePtr;
-  gnh->acceptorPtr = aPtr;
+  gnh->acceptorPtr =  (gasDataAcceptorPtr) aPtr;
   GasSensor_addItsGasNH(me, gnh);
 }
 void GasSensor_unsubscribe(GasSensor *const me, const gasDataAcceptorPtr *aPtr)
@@ -61,7 +61,7 @@ void GasSensor_unsubscribe(GasSensor *const me, const gasDataAcceptorPtr *aPtr)
   for (pos = 0; pos < 100; ++pos)
   {
     if (me->itsGasNH[pos])
-      if (me->itsGasNH[pos]->acceptorPtr == aPtr)
+      if (me->itsGasNH[pos]->acceptorPtr == (gasDataAcceptorPtr) aPtr)
       {
         GasNotificationHandle_Destroy(me->itsGasNH[pos]);
         me->itsGasNH[pos] = NULL;
