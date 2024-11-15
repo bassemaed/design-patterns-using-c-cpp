@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			    "label": "Build All with GCC",
+					"type": "shell",
+					"command": "/usr/bin/gcc",
+          "args": [
+            "-fdiagnostics-color=always",
+				    "-std=c17",
+				    "-g",
+				    "-I../Inc",                           // Go up one directory to reach Inc
+				    "-o", "../main",        
+            "*.c"                                 // Compile all .c files in the current directory (Src)
+          ],
+					"group": {
+							"kind": "build",
+							"isDefault": true
+					},
+					"options": {
+						"cwd": "${fileDirname}"
+					},
+					"problemMatcher": [
+							"$gcc"
+					]
+			},
+		{
+			"type": "shell",
+			"label": "C run",
+			"command": "${fileDirname}/../main",
+			"dependsOn": [
+				"Build All with GCC"
+			],
+			"dependsOrder": "sequence",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
