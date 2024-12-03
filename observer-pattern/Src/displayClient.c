@@ -59,9 +59,9 @@ struct GasSensor *DisplayClient_getItsGasSensor(const DisplayClient *const me)
 {
   return (struct GasSensor *)me->itsGasSensor;
 }
-void DisplayClient_setItsGasSensor(DisplayClient *const me, struct GasSensor *p_GasSen­sor)
+void DisplayClient_setItsGasSensor(DisplayClient *const me, struct GasSensor *p_GasSensor)
 {
-  me->itsGasSensor = p_GasSen­sor;
+  me->itsGasSensor = p_GasSensor;
 }
 DisplayClient *DisplayClient_Create(void)
 {
