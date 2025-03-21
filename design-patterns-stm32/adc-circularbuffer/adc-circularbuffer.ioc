@@ -1,9 +1,11 @@
 #MicroXplorer Configuration settings - do not modify
 ADC1.Channel-0\#ChannelRegularConversion=ADC_CHANNEL_8
 ADC1.Channel-1\#ChannelRegularConversion=ADC_CHANNEL_8
-ADC1.DiscontinuousConvMode=ENABLE
+ADC1.ContinuousConvMode=DISABLE
+ADC1.DMAContinuousRequests=ENABLE
+ADC1.DiscontinuousConvMode=DISABLE
 ADC1.ExternalTrigConv=ADC_EXTERNALTRIGCONV_T3_TRGO
-ADC1.IPParameters=Rank-0\#ChannelRegularConversion,Channel-0\#ChannelRegularConversion,SamplingTime-0\#ChannelRegularConversion,NbrOfConversionFlag,master,ScanConvMode,DiscontinuousConvMode,Rank-1\#ChannelRegularConversion,Channel-1\#ChannelRegularConversion,SamplingTime-1\#ChannelRegularConversion,NbrOfConversion,ExternalTrigConv
+ADC1.IPParameters=Rank-0\#ChannelRegularConversion,Channel-0\#ChannelRegularConversion,SamplingTime-0\#ChannelRegularConversion,NbrOfConversionFlag,master,ScanConvMode,DiscontinuousConvMode,Rank-1\#ChannelRegularConversion,Channel-1\#ChannelRegularConversion,SamplingTime-1\#ChannelRegularConversion,NbrOfConversion,ExternalTrigConv,DMAContinuousRequests,ContinuousConvMode
 ADC1.NbrOfConversion=2
 ADC1.NbrOfConversionFlag=1
 ADC1.Rank-0\#ChannelRegularConversion=1
