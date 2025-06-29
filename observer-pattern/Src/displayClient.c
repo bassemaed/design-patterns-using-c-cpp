@@ -40,9 +40,9 @@ void DisplayClient_show(DisplayClient *const me)
 {
   if (me->itsGasData)
   {
-    printf("Gas Flow Rate = %5d\n", me->itsGasData->flowRate);
-    printf("O2 Concentration = %2d\n", me->itsGasData->O2Conc);
-    printf("N2 Concentration = %2d\n\n", me->itsGasData->N2Conc);
+    printf("Gas Flow Rate = %u\n", me->itsGasData->flowRate);
+    printf("O2 Concentration = %u\n", me->itsGasData->O2Conc);
+    printf("N2 Concentration = %u\n\n", me->itsGasData->N2Conc);
   }
   else
     printf("No data available\n\n");
